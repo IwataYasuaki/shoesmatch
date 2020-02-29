@@ -1,24 +1,5 @@
-# README
+# 靴マッチ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+左右の足のサイズが異なる人が、自分とちょうど左右逆のサイズの人と出会うためのマッチングアプリ
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+を作ろうとしている
