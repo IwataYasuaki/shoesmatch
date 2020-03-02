@@ -1,2 +1,29 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'ユーザ登録') %>
+<h1>ユーザ登録</h1>
+
+<div class="row">
+  <div class="six columns">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "u-full-width" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "u-full-width" %>
+
+      <%= f.label :prefecture %>
+      <%= f.collection_select :prefecture_id, @pref, :id, :name, class: "u-full-width", prompt: true %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "u-full-width" %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: "u-full-width" %>
+
+      <%= f.submit  class: "button-primary u-full-width" %>
+    <% end %>
+  </div>
+</div>
+
+<pre><code><%= debug(@user) %></code></pre>

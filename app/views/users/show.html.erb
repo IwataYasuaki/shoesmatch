@@ -1,0 +1,11 @@
+<h1>ユーザ情報</h1>
+<table>
+<tr><th>名前</th><td><%= @user.name %></td></tr>
+<tr><th>メールアドレス</th><td><%= @user.email %></td></tr>
+<tr><th>都道府県</th><td><%= @user.prefecture.name %></td></tr>
+<tr><th>作成日時</th><td><%= @user.created_at %></td></tr>
+<tr><th>更新日時</th><td><%= @user.updated_at %></td></tr>
+</table>
+
+<pre><code><%= debug(@user) %></code></pre>
+<pre><code><%= debug(@user.prefecture) %></code></pre>
