@@ -13,7 +13,7 @@
       <%= f.email_field :email, class: "u-full-width" %>
 
       <%= f.label :prefecture %>
-      <%= f.collection_select :prefecture_id, @pref, :id, :name, class: "u-full-width", prompt: true %>
+      <%= f.collection_select :prefecture_id, @pref, :id, :name, { include_blank: true }, class: "u-full-width" %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: "u-full-width" %>
