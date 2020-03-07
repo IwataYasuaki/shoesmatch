@@ -1,5 +1,10 @@
+$ERROR_COLOR : #ea352d;
 .field_with_errors {
   input, select {
-    border-color: red;
+    border-color: $ERROR_COLOR;
   }
+}
+
+#error_explanation {
+  color: $ERROR_COLOR;
 }

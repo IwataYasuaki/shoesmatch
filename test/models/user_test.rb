@@ -5,9 +5,9 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(name: "Example User", 
                      email: "user@example.com",
+                     prefecture_id: 1,
                      password: "foobar",
                      password_confirmation: "foobar")
-    @user.build_prefecture()
   end
 
   test "should be valid" do
