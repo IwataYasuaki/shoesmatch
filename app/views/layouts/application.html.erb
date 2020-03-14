@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <li><%= link_to current_user.name, current_user %>でログイン中</li>
+      <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "ユーザ登録", signup_path %></li>
+      <li><%= link_to "ログイン", login_path %></li>
+    <% end %>
     <% flash.each do | msg_type, msg | %>
       <div class="alert alert-<%= msg_type %>"><%= msg %></div>
     <% end %>
