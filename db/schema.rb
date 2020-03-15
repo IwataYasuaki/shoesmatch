@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_080749) do
+ActiveRecord::Schema.define(version: 2020_03_14_151720) do
 
   create_table "prefectures", force: :cascade do |t|
     t.string "code"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_080749) do
     t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["prefecture_id"], name: "index_users_on_prefecture_id"

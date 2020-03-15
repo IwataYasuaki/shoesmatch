@@ -56,4 +56,8 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "記憶トークンがnilの場合authenticated?はfalseを返すこと" do
+    assert_not @user.authenticated?('')
+  end
 end
