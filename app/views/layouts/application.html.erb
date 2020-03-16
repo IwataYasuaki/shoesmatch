@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <meta name="viewport" content="width=device-wdth, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,17 +11,32 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <li><%= link_to current_user.name, current_user %>でログイン中</li>
-      <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "ユーザ登録", signup_path %></li>
-      <li><%= link_to "ログイン", login_path %></li>
-    <% end %>
+
+    <header>
+      <%= link_to root_path do %>
+        <%= image_tag "logo.svg", id: "logo" %>
+        <h1 id="logo-text">靴マッチ</h1>
+      <% end %>
+      <div>
+        <% if logged_in? %>
+          <%= link_to current_user.name, current_user %>
+          <%= link_to "ログアウト", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "ユーザ登録", signup_path, class: "button" %>
+          <%= link_to "ログイン", login_path, class: "button" %>
+        <% end %>
+      </div>
+    </header>
+
     <% flash.each do | msg_type, msg | %>
       <div class="alert alert-<%= msg_type %>"><%= msg %></div>
     <% end %>
+
     <%= yield %>
-    <pre><code><%= debug(params) if Rails.env.development? %></code></pre>
+
+    <% if Rails.env.development? %>
+      <pre><code><%= debug(params) %></code></pre>
+    <% end %>
+
   </body>
 </html>

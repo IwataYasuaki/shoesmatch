@@ -5,6 +5,23 @@ $ERROR_COLOR : #ea352d;
   }
 }
 
-#error_explanation {
+#error_explanation,
+.alert-danger {
   color: $ERROR_COLOR;
+}
+
+#logo {
+  height: 50px;
+}
+
+#logo-text {
+  text-decoration: none;
+  color: #222;
+  display: inline;
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
 }

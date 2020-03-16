@@ -26,4 +26,7 @@
   </div>
 </div>
 
-<pre><code><%= debug(@user) %></code></pre>
+<% if Rails.env.development? %>
+  <pre><code><%= debug(@user) %></code></pre>
+<% end %>
+
