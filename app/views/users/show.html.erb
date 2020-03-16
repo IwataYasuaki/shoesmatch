@@ -7,5 +7,9 @@
 <tr><th>更新日時</th><td><%= @user.updated_at %></td></tr>
 </table>
 
-<pre><code><%= debug(@user) %></code></pre>
-<pre><code><%= debug(@user.prefecture) %></code></pre>
+<% if Rails.env.development? %>
+  <pre><code><%= debug(@user) %></code></pre>
+<% end %>
+<% if Rails.env.development? %>
+  <pre><code><%= debug(@user.prefecture) %></code></pre>
+<% end %>
