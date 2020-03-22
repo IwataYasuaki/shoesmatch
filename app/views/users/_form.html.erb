@@ -1,0 +1,37 @@
+<%= form_for(@user) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "u-full-width" %>
+    </div>
+    <div class="six columns">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "u-full-width" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :prefecture %>
+      <%= f.collection_select :prefecture_id, @pref, :id, :name,
+          { include_blank: true }, class: "u-full-width" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "u-full-width" %>
+    </div>
+    <div class="six columns">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: "u-full-width" %>
+    </div>
+  </div>
+
+  <%= f.submit  class: "button-primary" %>
+
+<% end %>

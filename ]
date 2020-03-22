@@ -15,9 +15,8 @@
     <div class="container">
 
       <header>
-        <%= link_to root_path, style:"text-decoration:none;" do %>
-          <%# image_tag "logo.svg", id: "logo" %>
-          <h3>APタイトル</h3>
+        <%= link_to root_path do %>
+          <%=  image_tag "logo.svg", id: "logo" %>
         <% end %>
         <div>
           <% if logged_in? %>

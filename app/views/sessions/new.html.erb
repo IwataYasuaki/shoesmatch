@@ -1,5 +1,5 @@
 <% provide(:title, "ログイン") %>
-<h1>ログイン</h1>
+<h5><%= yield(:title) %></h5>
 
 <div class="row">
     <%= form_for(:session, url: login_path) do |f| %>
