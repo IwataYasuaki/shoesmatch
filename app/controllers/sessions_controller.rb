@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash.now[:danger] = 'Invalid email/password combination'
+      @email = params[:session][:email]
       render 'new'
     end
   end

@@ -6,7 +6,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-  test "login with invalid information" do
+  test "不適切な入力の場合、ログインできないこと" do
     get login_path
     assert_template 'sessions/new'
     post login_path, params: { session: { email: "", password: "" } }

@@ -1,9 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+hokkaido:
   id: 1
-  name: MyString
+  name: 北海道
 
-two:
+aomori:
   id: 2
-  name: MyString
+  name: 青森
+
+iwate:
+  id: 3
+  name: 岩手
+
+miyagi:
+  id: 4
+  name: 宮城
+
+akita:
+  id: 5
+  name: 秋田
