@@ -1,0 +1,23 @@
+<% provide(:title, '靴情報') %>
+<h5><%= yield(:title) %></h5>
+
+<table>
+<tr><th>左サイズ</th><td><%= @shoe.left_size %></td></tr>
+<tr><th>右サイズ</th><td><%= @shoe.right_size %></td></tr>
+<tr><th>メーカー</th><td><%= @shoe.maker %></td></tr>
+<tr><th>商品名</th><td><%= @shoe.name %></td></tr>
+<tr><th>説明</th><td><%= @shoe.description %></td></tr>
+<tr><th>ユーザ</th><td><%= @shoe.user.name %></td></tr>
+<tr><th>ステータス</th><td><%= @shoe.shoe_status.status %></td></tr>
+<tr><th>作成日時</th><td><%= @shoe.created_at %></td></tr>
+<tr><th>更新日時</th><td><%= @shoe.updated_at %></td></tr>
+</table>
+
+<%= link_to "変更", edit_shoe_path(@shoe), class: "button" %>
+<%= link_to "削除", @shoe, method: :delete,
+  data: { confirm: "靴を削除してよろしいですか？" }, class: "button" %>
+
+<% if Rails.env.development? %>
+  <pre><code><%= debug(@shoe) %></code></pre>
+<% end %>
+

@@ -1,7 +1,9 @@
+<% provide(:BASE_TITLE, 'Shoes Match') %>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+    <title><%= full_title(yield(:BASE_TITLE), yield(:title)) %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,10 +19,11 @@
       <header>
         <%= link_to root_path, style:"text-decoration:none;" do %>
           <%# image_tag "logo.svg", id: "logo" %>
-          <h3>APタイトル</h3>
+          <h3 id="site_title"><%= yield(:BASE_TITLE) %></h3>
         <% end %>
         <div>
           <% if logged_in? %>
+            <%= link_to "ほしい靴を登録", new_shoe_path, class: "button" %>
             <%= link_to "マイページ", current_user, class: "button" %>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "button" %>
           <% else %>

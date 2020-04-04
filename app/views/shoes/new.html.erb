@@ -1,0 +1,9 @@
+<% provide(:title, 'ほしい靴を登録') %>
+<h5><%= yield(:title) %></h5>
+
+<%= render 'form' %>
+
+<% if Rails.env.development? %>
+  <pre><code><%= debug(@shoe) %></code></pre>
+<% end %>
+

@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_151720) do
+ActiveRecord::Schema.define(version: 2020_03_29_024049) do
 
   create_table "prefectures", force: :cascade do |t|
     t.string "code"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shoe_statuses", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shoes", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "left_size"
+    t.float "right_size"
+    t.string "maker"
+    t.string "name"
+    t.text "description"
+    t.integer "shoe_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shoe_status_id"], name: "index_shoes_on_shoe_status_id"
+    t.index ["user_id"], name: "index_shoes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

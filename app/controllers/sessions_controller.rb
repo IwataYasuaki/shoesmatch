@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ?
         remember(user) : forget(user)
-      flash[:success] = 'login success'
+      flash[:success] = 'ログインしました。'
       redirect_to user
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = 'EmailまたはPasswordが間違っています。'
       @email = params[:session][:email]
       render 'new'
     end
@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
+    flash[:success] = "ログアウトしました。"
     redirect_to root_url
   end
 

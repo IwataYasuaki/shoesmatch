@@ -1,0 +1,21 @@
+<% provide(:title, '靴一覧') %>
+<h5><%= yield(:title) %></h5>
+
+<% @shoes.each do |shoe| %>
+  <%= link_to shoe, style: "text-decoration: none;" do %>
+  <div class="shoe">
+    <table>
+      <tr><th>左サイズ</th><td><%= shoe.left_size %></td></tr>
+      <tr><th>右サイズ</th><td><%= shoe.right_size %></td></tr>
+      <tr><th>メーカー</th><td><%= shoe.maker %></td></tr>
+      <tr><th>商品名</th><td><%= shoe.name %></td></tr>
+      <tr><th>ユーザ</th><td><%= shoe.user.name %></td></tr>
+    </table>
+  </div>
+  <% end %>
+<% end %>
+
+<% if Rails.env.development? %>
+  <pre><code><%= debug(@shoe) %></code></pre>
+<% end %>
+

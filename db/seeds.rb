@@ -55,3 +55,7 @@ Prefecture.create!(code: "45", name: "宮崎県")
 Prefecture.create!(code: "46", name: "鹿児島県")
 Prefecture.create!(code: "47", name: "沖縄県")
 
+# ShoeStatus
+ShoeStatus.create!(status: "登録済み")
+ShoeStatus.create!(status: "共同購入済み")
+

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  left_size: 1.5
+  right_size: 1.5
+  maker: MyString
+  name: MyString
+  description: MyText
+  shoe_status: one
+
+two:
+  user: two
+  left_size: 1.5
+  right_size: 1.5
+  maker: MyString
+  name: MyString
+  description: MyText
+  shoe_status: two

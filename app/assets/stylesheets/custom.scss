@@ -1,4 +1,13 @@
-$ERROR_COLOR : #ea352d;
+$SUCCESS_COLOR: #1eaedb;
+$ERROR_COLOR: #ea352d;
+$BASE_CHARA_COLOR: #222;
+
+#site_title {
+  color: $BASE_CHARA_COLOR;
+  font-family: serif;
+  font-weight: 600;
+}
+
 .field_with_errors {
   input, select {
     border-color: $ERROR_COLOR;
@@ -8,19 +17,36 @@ $ERROR_COLOR : #ea352d;
 #error_explanation,
 .alert-danger {
   color: $ERROR_COLOR;
+  margin-bottom: 1rem;
+}
+
+.alert-success {
+  color: $SUCCESS_COLOR;
+  margin-bottom: 1rem;
 }
 
 #logo {
-  height: 50px;
+  height: 5rem;
 }
 
+/*
 header {
   display: flex;
   justify-content: space-between;
 }
+*/
 
 .button {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  min-width: 8rem;
 }
 
+.half-width {
+  width: 50%;
+}
+
+.shoe {
+  background-color: #ddddff;
+  color: $BASE_CHARA_COLOR;
+}

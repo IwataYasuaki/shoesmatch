@@ -1,0 +1,38 @@
+<%= form_for(@shoe) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :left_size %>
+      <%= f.number_field :left_size, in: 20.0..35.0, step: 0.5, class: "half-width" %>
+      <span class="half-width unit">cm</span>
+    </div>
+    <div class="six columns">
+      <%= f.label :right_size %>
+      <%= f.number_field :right_size, in: 20.0..35.0, step: 0.5, class: "half-width" %>
+      <span class="half-width unit">cm</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :maker %>
+      <%= f.text_field :maker, class: "u-full-width" %>
+    </div>
+    <div class="six columns">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "u-full-width" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "u-full-width" %>
+    </div>
+  </div>
+
+  <%= f.submit  class: "button-primary" %>
+
+<% end %>
